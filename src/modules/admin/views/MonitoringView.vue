@@ -1,5 +1,6 @@
 <script setup>
 	import { ref } from 'vue';
+	import BaseSelect from '@/components/organisms/select/BaseSelect.vue';
 	
 	const options = [
 		{ value: '1', label: 'Opción 1' },
@@ -30,7 +31,13 @@
 			<div class="px-4 py-2">
 				<div class="grid grid-cols-5 gap-4 mt-2 my-2 px-2">
 					<div class="col-span-1">
-				
+						<BaseSelect
+							type="single"
+							v-model="form.campaign"
+							:options="options"
+							label="Campaña"
+							placeholder="Seleccionar"
+						/>
 					</div>
 					<div class="col-span-1">
 						<input type="date" v-model="form.startDate" class="base-input w-full" />
@@ -39,7 +46,13 @@
 						<input type="date" v-model="form.endDate" class="base-input w-full" />	
 					</div>
 					<div class="col-span-1">
-			
+						<BaseSelect
+							type="single"
+							v-model="form.typeSearch"
+							:options="searchOptions"
+							label="Tipo de búsqueda"
+							placeholder="Seleccionar"
+						/>
 					</div>
 					<div class="col-span-1">
 						<input type="text" v-model="form.searchId" class="base-input w-full" placeholder="ID" />
