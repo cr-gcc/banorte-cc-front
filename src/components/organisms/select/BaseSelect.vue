@@ -25,6 +25,10 @@
 			type: String,
 			default: ''
 		},
+		classLabel: {
+			type: String,
+			default: ''
+		},
 		placeholder: {
 			type: String,
 			default: 'Seleccionar'
@@ -112,9 +116,7 @@
 </script>
 <template>
 	<div class="w-full">
-		<label v-if="label" class="text-lg text-sky-900 font-semibold block mb-1">
-			{{ label }}
-		</label>
+		<label v-if="label" :class="['block mb-1', classLabel]">{{ label }}</label>
 		<div class="relative" ref="containerRef">
 			<SelectTrigger
 				:label="optionsLabel || placeholder"
