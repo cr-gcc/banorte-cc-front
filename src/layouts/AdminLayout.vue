@@ -1,8 +1,8 @@
 <script setup>
-	import Header from '@/components/layouts/header/AdminHeader.vue';
-	import Footer from '@/components/layouts/footer/Footer.vue';
-	import Sidebar from '@/components/layouts/sidebar/AdminSidebar.vue';
-	import DateTimeBar from '@/components/ui/DateTimeBar.vue';
+	import Header from '@/modules/admin/components/AdminHeader.vue';
+	import Footer from '@/components/organisms/Footer.vue';
+	import Sidebar from '@/modules/admin/components/AdminSidebar.vue';
+	import DateTimeBar from '@/components/molecules/DateTimeBar.vue';
 </script>
 
 <template>

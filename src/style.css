@@ -4,3 +4,7 @@
 body {
 	font-family: 'Manrope', sans-serif;
 }
+
+.base-input {
+	@apply px-3 py-1 focus:outline-none bg-white;
+}

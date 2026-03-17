@@ -1,5 +1,6 @@
 import AdminLayout from '@/layouts/AdminLayout.vue'
-import CalendarView from '@/views/admin/CalendarView.vue'
+import CalendarView from '@/modules/admin/views/CalendarView.vue'
+import MonitoringView from '@/modules/admin/views/MonitoringView.vue'
 
 export default [
 	{
@@ -12,6 +13,11 @@ export default [
 				path: 'calendario',
 				name: 'admin.calendario',
 				component: CalendarView
+			},
+			{
+				path: 'monitoreo',
+				name: 'admin.monitoreo',
+				component: MonitoringView
 			}
 		]
 	}

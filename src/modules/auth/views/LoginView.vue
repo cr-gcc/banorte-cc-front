@@ -1,7 +1,7 @@
 <script setup>
 	import { ref } from 'vue';
-	import Message from '@/components/ui/Message.vue';
-	import ProgressBar from '@/components/ui/ProgressBar.vue';
+	import Message from '@/components/atoms/Message.vue';
+	import ProgressBar from '@/components/atoms/ProgressBar.vue';
 
 	const logo = '/assets/images/logos/banorte_seguros_b.png';
 	const user = ref('');

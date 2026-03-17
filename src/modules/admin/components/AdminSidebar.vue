@@ -10,6 +10,11 @@
             <i class="fa-solid fa-calendar mr-2"/>Calendario
           </router-link>
         </li>
+        <li>
+          <router-link to="/admin/monitoreo" class="block rounded-lg px-4 py-2 font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-700">
+            <i class="fa-solid fa-eye mr-2"/>Monitoreo
+          </router-link>
+        </li>
       </ul>
     </div>
 	</aside>

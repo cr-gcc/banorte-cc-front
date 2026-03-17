@@ -1,5 +1,5 @@
 import AgentLayout from '@/layouts/AgentLayout.vue'
-import HomeView from '@/views/agent/HomeView.vue'
+import HomeView from '@/modules/agent/views/HomeView.vue'
 
 export default [
 	{

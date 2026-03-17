@@ -1,5 +1,5 @@
 import AuthLayout from '@/layouts/AuthLayout.vue'
-import LoginView from '@/views/auth/LoginView.vue'
+import LoginView from '@/modules/auth/views/LoginView.vue'
 
 export default [
 	{
