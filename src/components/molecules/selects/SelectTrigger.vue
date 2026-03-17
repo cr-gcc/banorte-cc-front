@@ -1,3 +1,13 @@
+<script setup>
+	defineProps({
+		label: {
+			type: String,
+			default: 'Seleccionar'
+		}
+	})
+
+	defineEmits(['toggle'])
+</script>
 <template>
   <div
     @click="$emit('toggle')"
@@ -9,13 +19,3 @@
     <i class="fa fa-angle-down" aria-hidden="true"></i>
   </div>
 </template>
-<script setup>
-	defineProps({
-		label: {
-			type: String,
-			default: 'Seleccionar'
-		}
-	})
-
-	defineEmits(['toggle'])
-</script>

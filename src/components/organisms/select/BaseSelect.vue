@@ -1,31 +1,3 @@
-<template>
-	<div class="w-full">
-		<label v-if="label" class="text-lg text-sky-900 font-semibold block mb-1">
-			{{ label }}
-		</label>
-		<div class="relative" ref="containerRef">
-			<SelectTrigger
-				:label="optionsLabel || placeholder"
-				:placeholder="placeholder"
-				@toggle="openSelect = !openSelect"
-			/>
-			<SelectDropdown :open="openSelect">
-				<SelectOption
-					v-for="option in totalOptions"
-					:key="option.value"
-					:option="option"
-					:selected="
-						type === 'single'
-							? normalizedValue === option.value
-							: normalizedValue.includes(option.value)
-					"
-					:disabled="option.value === ''"
-					@select="selectOption"
-				/>
-			</SelectDropdown>
-		</div>
-	</div>
-</template>
 <script setup>
 	import { ref, computed, onMounted, onUnmounted } from 'vue'
 	import SelectTrigger from '@/components/molecules/selects/SelectTrigger.vue'
@@ -138,3 +110,31 @@
 		document.removeEventListener('click', closeOnClickOutside)
 	})
 </script>
+<template>
+	<div class="w-full">
+		<label v-if="label" class="text-lg text-sky-900 font-semibold block mb-1">
+			{{ label }}
+		</label>
+		<div class="relative" ref="containerRef">
+			<SelectTrigger
+				:label="optionsLabel || placeholder"
+				:placeholder="placeholder"
+				@toggle="openSelect = !openSelect"
+			/>
+			<SelectDropdown :open="openSelect">
+				<SelectOption
+					v-for="option in totalOptions"
+					:key="option.value"
+					:option="option"
+					:selected="
+						type === 'single'
+							? normalizedValue === option.value
+							: normalizedValue.includes(option.value)
+					"
+					:disabled="option.value === ''"
+					@select="selectOption"
+				/>
+			</SelectDropdown>
+		</div>
+	</div>
+</template>

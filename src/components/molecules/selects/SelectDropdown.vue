@@ -1,3 +1,8 @@
+<script setup>
+	defineProps({
+		open: Boolean
+	})
+</script>
 <template>
 	<div
 		v-if="open"
@@ -6,8 +11,3 @@
 		<slot />
 	</div>
 </template>
-<script setup>
-	defineProps({
-		open: Boolean
-	})
-</script>

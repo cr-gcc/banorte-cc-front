@@ -1,16 +1,3 @@
-<template>
-	<div
-		@click="clickedOption"
-		class="flex items-center px-3 py-1"
-		:class="[
-			disabled ? 'text-gray-400 cursor-default' : 'hover:bg-gray-200 cursor-pointer',
-      { 'bg-gray-100 font-semibold': selected && !disabled }
-    ]"
-  >
-    <span class="break-words whitespace-normal">{{ option.label }}</span>
-  </div>
-</template>
-
 <script setup>
 	const props = defineProps({
 		option: Object,
@@ -26,3 +13,15 @@
 		}
 	}
 </script>
+<template>
+	<div
+		@click="clickedOption"
+		class="flex items-center px-3 py-1"
+		:class="[
+			disabled ? 'text-gray-400 cursor-default' : 'hover:bg-gray-200 cursor-pointer',
+      { 'bg-gray-100 font-semibold': selected && !disabled }
+    ]"
+  >
+    <span class="break-words whitespace-normal">{{ option.label }}</span>
+  </div>
+</template>
