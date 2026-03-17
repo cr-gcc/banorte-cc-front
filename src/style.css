@@ -5,6 +5,12 @@ body {
 	font-family: 'Manrope', sans-serif;
 }
 
-.base-input {
-	@apply px-3 py-1 focus:outline-none bg-white;
+/*INPUTS*/
+.base-square-input-sm {
+	@apply px-2 focus:outline-none appearance-none;
+}
+
+/*BUTTONS*/
+.base-square-button-sm {
+	@apply px-2 py-0.5 focus:outline-none appearance-none cursor-pointer;
 }
