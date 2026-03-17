@@ -1,7 +1,41 @@
 <script setup>
-	import { ref } from 'vue';
+	import { ref, onMounted, onUnmounted } from 'vue'
 
 	const logoPath = ref('/assets/images/logos/banorte_seguros_c.png');
+
+	const isOpen = ref(false)
+	const dropdownRef = ref(null)
+	const userName = 'Cristobal Gutierrez'
+	const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(userName)}`
+
+	const logout = () => {
+		// Aquí va tu lógica de logout
+		console.log('Cerrando sesión...')
+	}
+
+	const toggleMenu = () => {
+		isOpen.value = !isOpen.value
+	}
+
+	const closeDropdown = () => {
+		isOpen.value = false
+	}
+
+	const handleClickOutside = (event) => {
+		if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+			closeDropdown();
+		}
+	};
+
+	// Cerrar el dropdown si se hace clic fuera
+	onMounted( async () => {
+		document.addEventListener('click', handleClickOutside);
+		
+	});
+
+	onUnmounted(() => {
+		document.removeEventListener('click', handleClickOutside);
+	});
 </script>
 
 <template>
@@ -17,7 +51,27 @@
 					<nav ref="navMenuRef" class="hidden md:block relative">
 						<ul class="flex text-md text-red-700 items-center gap-2">
 							<li>
-								uju
+								<div ref="dropdownRef" class="relative">
+									<button @click="toggleMenu()" class="focus:outline-none cursor-pointer ">
+										<img 
+											:src="avatarUrl"
+											alt="avatar"
+											class="w-10 h-10 rounded-full border-2 border-gray-700"
+										>
+									</button>
+									<!-- Dropdown -->
+									<li v-if="isOpen" class="absolute right-0 top-12 w-44 bg-gray-100 shadow-lg z-50">
+										<a href="/perfil" class="block text-gray-700 px-4 py-2 text-sm hover:bg-white">
+											Perfil
+										</a>
+										<button 
+											@click="logout()"
+											class="w-full text-left text-gray-700 px-4 py-2 text-sm cursor-pointer hover:bg-white"
+										>
+											Cerrar sesión
+										</button>
+									</li>
+								</div>
 							</li>
 						</ul>
 					</nav>
