@@ -1,7 +1,7 @@
 <script setup>
-	import Header from '@/modules/admin/components/AdminHeader.vue';
+	import Header from '@/modules/admin/components/Header.vue';
 	import Footer from '@/components/organisms/Footer.vue';
-	import Sidebar from '@/modules/admin/components/AdminSidebar.vue';
+	import Sidebar from '@/modules/admin/components/Sidebar.vue';
 	import DateTimeBar from '@/components/molecules/DateTimeBar.vue';
 </script>
 
