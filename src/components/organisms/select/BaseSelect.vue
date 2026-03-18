@@ -32,6 +32,18 @@
 		placeholder: {
 			type: String,
 			default: 'Seleccionar'
+		},
+		size: {
+			type: String,
+			default: 'md'
+		},
+		rounded: {
+			type: String,
+			default: 'square'
+		},
+		classInput: {
+			type: String,
+			default: ''
 		}
 	})
 
@@ -121,6 +133,9 @@
 			<SelectTrigger
 				:label="optionsLabel || placeholder"
 				:placeholder="placeholder"
+				:size="size"
+				:rounded="rounded"
+				:styleClass="classInput"
 				@toggle="openSelect = !openSelect"
 			/>
 			<SelectDropdown :open="openSelect">

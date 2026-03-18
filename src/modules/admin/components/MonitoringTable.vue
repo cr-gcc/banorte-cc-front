@@ -24,13 +24,13 @@
 			thrClass="bg-red-800 text-white"
 		>
 			<template #item-actions="{ row }">
-				<BaseButton styleClass="text-gray-600 base-square-button-sm">
+				<BaseButton size="sm" styleClass="text-gray-600">
 					<i class="fa-solid fa-play"></i>
 				</BaseButton>
-				<BaseButton styleClass="text-gray-600 base-square-button-sm">
+				<BaseButton size="sm" styleClass="text-gray-600">
 					<i class="fa-solid fa-eye"></i>
 				</BaseButton>
-				<BaseButton styleClass="text-gray-600 base-square-button-sm">
+				<BaseButton size="sm" styleClass="text-gray-600">
 					<i class="fa-solid fa-download"></i>
 				</BaseButton>
 			</template>

@@ -3,9 +3,11 @@
 	import BaseSelect from '@/components/organisms/select/BaseSelect.vue';
 	import FormInputLabel from '@/components/molecules/form/FormInputLabel.vue';
 	import BaseButton from '@/components/atoms/buttons/BaseButton.vue';
+	import ProgressBar from '@/components/atoms/feedback/ProgressBar.vue';
 	import MonitoringTable from '@/modules/admin/components/MonitoringTable.vue';
 	
-	const options = [
+	const loading = ref(true);
+	const campaigns = [
 		{ value: '1', label: 'Opción 1' },
 		{ value: '2', label: 'Opción 2' },
 		{ value: '3', label: 'Opción 3' }
@@ -76,9 +78,10 @@
 						<BaseSelect
 							type="single"
 							v-model="form.campaign"
-							:options="options"
+							:options="campaigns"
 							label="Campaña"
 							classLabel="text-red-900 font-semibold"
+							classInput="bg-white"
 							placeholder="Seleccionar"
 						/>
 					</div>
@@ -90,7 +93,7 @@
 							v-model="form.startDate"
 							label="Fecha de inicio"
 							classLabel="text-red-900 font-semibold"
-							classInput="w-full bg-white base-square-input-md px-2"
+							classInput="bg-white"
 							placeholder="Seleccionar"
 						/>
 					</div>
@@ -102,7 +105,7 @@
 							v-model="form.endDate"
 							label="Fecha de fin"
 							classLabel="text-red-900 font-semibold"
-							classInput="w-full bg-white base-square-input-md px-2"
+							classInput="bg-white"
 							placeholder="Seleccionar"
 						/>
 					</div>
@@ -115,7 +118,7 @@
 							:options="searchOptions"
 							label="Tipo de búsqueda"
 							classLabel="text-red-900 font-semibold"
-							classInput="w-full bg-white base-square-input-md"
+							classInput="bg-white"
 							placeholder="Seleccionar"
 						/>
 					</div>
@@ -127,7 +130,7 @@
 							v-model="form.searchId"
 							label="Identificador"
 							classLabel="text-red-900 font-semibold"
-							classInput="w-full bg-white base-square-input-sm"
+							classInput="bg-white"
 							placeholder="ID"
 						/>
 					</div>
@@ -138,7 +141,7 @@
 							:options="typificationOptions"
 							label="Tipificación"
 							classLabel="text-red-900 font-semibold"
-							classInput="w-full bg-white base-square-input-md"
+							classInput="bg-white"
 							placeholder="Seleccionar"
 						/>
 					</div>
@@ -146,16 +149,23 @@
 				<div class="flex justify-end gap-2 my-2 px-2">
 					<BaseButton
 						type="button"
-						styleClass="bg-gray-600 text-white base-square-button-sm"
+						size="sm"
+						rounded="none"
+						styleClass="bg-gray-600 text-white"
 					>
 						Limpiar
 					</BaseButton>
 					<BaseButton
 						type="button"
-						styleClass="bg-gray-600 text-white base-square-button-sm"
+						size="sm"
+						rounded="none"
+						styleClass="bg-gray-600 text-white"
 					>
 						Buscar
 					</BaseButton>
+				</div>
+				<div v-if="loading" class="my-2 px-2">
+					<ProgressBar/>
 				</div>
 				<div class="mt-4 mb-2 px-2">
 					<MonitoringTable />

@@ -29,6 +29,14 @@ defineProps({
 	classLabel: {
 		type: String,
 		default: ''
+	},
+	size: {
+		type: String,
+		default: 'md'
+	},
+	rounded: {
+		type: String,
+		default: 'square'
 	}
 })
 
@@ -41,8 +49,10 @@ defineEmits(['update:modelValue'])
       :id="id"
       :name="name"
       :type="type"
+      :size="size"
+      :rounded="rounded"
       :modelValue="modelValue"
-      :class="['focus:outline-none focus:ring-0',classInput]"
+      :styleClass="classInput"
       @update:modelValue="$emit('update:modelValue', $event)"
     />
   </div>
