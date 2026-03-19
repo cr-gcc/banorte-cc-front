@@ -1,6 +1,6 @@
 <script setup>
 	import { ref, onMounted, onUnmounted } from 'vue'
-	import Profile from '@/modules/admin/components/modals/user/Profile.vue'
+	import Profile from '@/modules/admin/components/modals/user/ProfileModal.vue'
 
 	const logoPath = ref('/assets/images/logos/banorte_seguros_c.png');
 	const isProfileModalOpen = ref(false)

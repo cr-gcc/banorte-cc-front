@@ -15,6 +15,19 @@
             <i class="fa-solid fa-eye mr-2"/>Monitoreo
           </router-link>
         </li>
+				<li>
+					<hr class="border-gray-300"/>
+				</li>
+				<li>
+					<router-link to="/admin/" class="block rounded-lg px-4 py-2 font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-700">
+						<i class="fa-solid fa-user-lock mr-2"/>Roles / Permisos
+					</router-link>
+				</li>
+				<li>
+					<router-link to="/admin/" class="block rounded-lg px-4 py-2 font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-700">
+						<i class="fa-solid fa-user mr-2"/>Usuarios
+					</router-link>
+				</li>
       </ul>
     </div>
 	</aside>

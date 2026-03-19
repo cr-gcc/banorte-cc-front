@@ -34,7 +34,7 @@
 				<div class="flex items-center gap-4">
 					<div class="h-8 w-8 rounded-full bg-gray-200"></div>
 					<div class="flex flex-col">
-						<span class="text-lg font-semibold">Cristobal Gutierrez Chaves</span>
+						<span class="text-lg font-semibold">Cristobal Gutierrez Chavez</span>
 						<span class="text-sm text-gray-500">GUCC900726</span>
 						<span class="text-sm text-gray-500">Administrador</span>
 						<span class="text-sm text-gray-500">cris.gcc@outlock.com</span>

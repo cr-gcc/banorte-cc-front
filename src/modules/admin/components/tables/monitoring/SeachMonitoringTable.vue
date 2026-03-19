@@ -2,8 +2,8 @@
 	import { ref } from 'vue';
 	import BaseTable from '@/components/organisms/table/BaseTable.vue';
 	import BaseButton from '@/components/atoms/buttons/BaseButton.vue';
-	import Record from '@/modules/admin/components/modals/monitoring/Record.vue';
-	import FollowUp from '@/modules/admin/components/modals/monitoring/FollowUp.vue';
+	import Record from '@/modules/admin/components/modals/monitoring/RecordModal.vue';
+	import FollowUp from '@/modules/admin/components/modals/monitoring/FollowUpModal.vue';
 	
 	const isOpenRecordModal = ref(false);
 	const isOpenFollowUpModal = ref(false);

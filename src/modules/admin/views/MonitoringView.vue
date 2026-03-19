@@ -4,7 +4,7 @@
 	import FormInputLabel from '@/components/molecules/form/FormInputLabel.vue';
 	import BaseButton from '@/components/atoms/buttons/BaseButton.vue';
 	import ProgressBar from '@/components/atoms/feedback/ProgressBar.vue';
-	import MonitoringTable from '@/modules/admin/components/MonitoringTable.vue';
+	import MonitoringTable from '@/modules/admin/components/tables/monitoring/SeachMonitoringTable.vue';
 	
 	const loading = ref(false);
 	const campaigns = [
