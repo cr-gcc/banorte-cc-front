@@ -6,7 +6,7 @@
 	import ProgressBar from '@/components/atoms/feedback/ProgressBar.vue';
 	import MonitoringTable from '@/modules/admin/components/MonitoringTable.vue';
 	
-	const loading = ref(true);
+	const loading = ref(false);
 	const campaigns = [
 		{ value: '1', label: 'Opción 1' },
 		{ value: '2', label: 'Opción 2' },

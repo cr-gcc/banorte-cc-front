@@ -14,7 +14,7 @@
 		rounded: {
 			type: String,
 			default: 'square',
-			validator: (value) => ['none', 'square', 'pill'].includes(value)
+			validator: (value) => ['none', 'square', 'pill', 'pill-sm', 'pill-md'].includes(value)
 		},
 		styleClass: {
 			type: String,
@@ -32,7 +32,8 @@
 		if (props.rounded === 'none') classes.push('rounded-none');
 		else if (props.rounded === 'square') classes.push('rounded');
 		else if (props.rounded === 'pill') classes.push('rounded-full');
-
+		else if (props.rounded === 'pill-md') classes.push('rounded-md');
+		else if (props.rounded === 'pill-sm') classes.push('rounded-sm');
 		return classes.join(' ');
 	});
 </script>
