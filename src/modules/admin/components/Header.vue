@@ -1,8 +1,9 @@
 <script setup>
 	import { ref, onMounted, onUnmounted } from 'vue'
+	import Profile from '@/modules/admin/components/modals/user/Profile.vue'
 
 	const logoPath = ref('/assets/images/logos/banorte_seguros_c.png');
-
+	const isProfileModalOpen = ref(false)
 	const isOpen = ref(false)
 	const dropdownRef = ref(null)
 	const userName = 'Cristobal Gutierrez'
@@ -19,6 +20,10 @@
 
 	const closeDropdown = () => {
 		isOpen.value = false
+	}
+
+	const openProfileModal = () => {
+		isProfileModalOpen.value = true
 	}
 
 	const handleClickOutside = (event) => {
@@ -61,12 +66,14 @@
 									</button>
 									<!-- Dropdown -->
 									<li v-if="isOpen" class="absolute right-0 top-12 w-44 bg-gray-100 shadow-lg z-50">
-										<a href="/perfil" class="block text-gray-700 px-4 py-2 text-sm hover:bg-white">
+										<button 
+											@click="openProfileModal()"	
+											class="w-full text-left cursor-pointer text-gray-700 px-4 py-2 text-sm hover:bg-white">
 											Perfil
-										</a>
+										</button>
 										<button 
 											@click="logout()"
-											class="w-full text-left text-gray-700 px-4 py-2 text-sm cursor-pointer hover:bg-white"
+											class="w-full text-left cursor-pointer text-gray-700 px-4 py-2 text-sm hover:bg-white"
 										>
 											Cerrar sesión
 										</button>
@@ -79,4 +86,5 @@
 			</div>
 		</div>
 	</header>
+	<Profile v-model="isProfileModalOpen"/>
 </template>
