@@ -2,6 +2,7 @@
 	import { ref, computed } from 'vue';
 	import BaseModal from '@/components/molecules/modals/BaseModal.vue';
 	import BaseButton from '@/components/atoms/buttons/BaseButton.vue';
+	import GuidelineRatingTable from '@/modules/admin/components/tables/monitoring/GuidelineRatingTable.vue';
 
 	const props = defineProps({
 		modelValue: {
@@ -30,7 +31,7 @@
 		:closeOnEscape="false"
 	>
 		<template #body>
-			<p>Seguimiento</p>
+			<GuidelineRatingTable />
 		</template>
 		<template #options>
 			<BaseButton

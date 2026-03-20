@@ -143,6 +143,7 @@
 					v-for="option in totalOptions"
 					:key="option.value"
 					:option="option"
+					:size="size"
 					:selected="
 						type === 'single'
 							? normalizedValue === option.value

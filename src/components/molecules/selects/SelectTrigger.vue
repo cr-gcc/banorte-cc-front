@@ -23,11 +23,11 @@ const props = defineProps({
 })
 
 const computedClasses = computed(() => {
-	let classes = ['cursor-pointer', 'flex', 'justify-between', 'items-center', 'w-full'];
+	let classes = ['cursor-pointer', 'flex', 'justify-between', 'items-center', 'w-full', 'py-0.5'];
 	
-	if (props.size === 'sm') classes.push('px-2 py-0.5 text-sm');
-	else if (props.size === 'md') classes.push('px-3 py-1 text-base');
-	else if (props.size === 'lg') classes.push('px-4 py-1.5 text-lg');
+	if (props.size === 'sm') classes.push('px-1 text-sm');
+	else if (props.size === 'md') classes.push('px-1.5 text-base');
+	else if (props.size === 'lg') classes.push('px-2 text-lg');
 
 	if (props.rounded === 'none') classes.push('rounded-none');
 	else if (props.rounded === 'square') classes.push('rounded');
@@ -46,6 +46,6 @@ defineEmits(['toggle'])
     <span class="break-words">
       {{ label }}
     </span>
-    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    <i class="ml-2 fa fa-angle-down" aria-hidden="true"></i>
   </div>
 </template>
