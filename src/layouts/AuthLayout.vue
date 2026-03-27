@@ -1,13 +1,12 @@
 <script setup>
-	const principalImage = '/assets/images/wallpapers/banorte.jpg';
+	const principalImage = '/assets/images/wallpapers/corporativo.jpeg';
 
 </script>
 
 <template>
-	<div class="bg-gray-700">
+	<div class="bg-cover bg-no-repeat bg-center h-screen" :style="`background-image: url('${principalImage}')`">
 		<div class="flex justify-center h-screen">
-			<div class="hidden lg:block lg:w-2/3 bg-cover bg-center h-full"
-				:style="`background-image: url('${principalImage}')`"></div>
+			<div class="hidden lg:block lg:w-2/3 bg-cover bg-center h-full"></div>
 			<router-view />
 		</div>
 	</div>
