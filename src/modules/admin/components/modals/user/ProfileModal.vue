@@ -10,14 +10,15 @@
 		}
 	})
 
+	const emit = defineEmits(['update:modelValue', 'close'])
+
 	const isOpen = computed({
 		get: () => props.modelValue,
 		set: (value) => emit('update:modelValue', value)
 	});
 
-	const emit = defineEmits(['close'])
-
 	const closeProfileModal = () => {
+		emit('close')
 		isOpen.value = false
 	}
 </script>
