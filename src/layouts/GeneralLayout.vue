@@ -1,5 +1,5 @@
 <script setup>
-	const principalImage = '/assets/images/wallpapers/corporativo.jpeg';
+	const principalImage = `${import.meta.env.VITE_BASE_URL}assets/images/wallpapers/corporativo.jpeg`;
 
 </script>
 

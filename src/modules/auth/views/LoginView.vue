@@ -1,17 +1,49 @@
 <script setup>
 	import { ref } from 'vue';
+	import { useAuthStore } from '@/stores/authStore'
+	import { useRouter } from 'vue-router'
 	import Message from '@/components/atoms/feedback/Message.vue';
 	import ProgressBar from '@/components/atoms/feedback/ProgressBar.vue';
 
-	const logo = '/assets/images/logos/banorte_seguros_b.png';
+	const authStore = useAuthStore()
+	const router = useRouter()
+
+	const logo = `${import.meta.env.VITE_BASE_URL}assets/images/logos/banorte_seguros_b.png`;
 	const user = ref('');
 	const password = ref('');
 	const message = ref('');
 	const variant = ref('error');
 	const progressBar = ref(false);
 
-	const login = () => {
-		console.log(user.value, password.value);
+	const login = async () => {
+		const credentials = {
+			user: user.value,
+			password: password.value
+		}
+		message.value = '';
+		variant.value = 'error';
+		if (credentials.user === '' || credentials.password === '') {
+			message.value = 'Usuario y contraseña son obligatorios';
+			variant.value = 'error';
+			return;
+		}
+		progressBar.value = true;
+
+		authStore.login(credentials)
+			.then(() => {
+				if(authStore.user.rol.role_type === 'admin'){
+					router.push('/admin');
+				}else{
+					router.push('/agente');
+				}
+			})
+			.catch((error) => {
+				message.value = error.response.data.message;
+				variant.value = 'error';
+			})
+			.finally(() => {
+				progressBar.value = false;
+			});
 	}
 </script>
 
@@ -26,11 +58,11 @@
 			<div class="mt-8">
 				<form @submit.prevent="login()">
 					<div class="mb-4">
-						<label for="user" class="block text-sm text-red-800 mb-2">Usuario</label>
+						<label for="user" class="block text-red-800 mb-2">Usuario</label>
 						<input v-model="user" type="text" name="user" id="user" class="block w-full px-4 py-2 text-gray-600 border rounded-lg bg-gray-200 border-red-400  focus:border-red-600 focus:ring-red-600 focus:outline-none focus:ring focus:ring-opacity-40" />
 					</div>
 					<div class="mb-6">
-						<label for="password" class="block text-sm text-red-800 mb-2">Contraseña</label>
+						<label for="password" class="block text-red-800 mb-2">Contraseña</label>
 						<input v-model="password" type="password" name="password" id="password" class="block w-full px-4 py-2 text-gray-600 border rounded-lg bg-gray-200 border-red-400  focus:border-red-600 focus:ring-red-600 focus:outline-none focus:ring focus:ring-opacity-40"/>
 					</div>
 					<div>
