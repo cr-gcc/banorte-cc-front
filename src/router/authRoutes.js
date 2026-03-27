@@ -1,10 +1,13 @@
-import AuthLayout from '@/layouts/AuthLayout.vue'
+import GeneralLayout from '@/layouts/GeneralLayout.vue'
 import LoginView from '@/modules/auth/views/LoginView.vue'
 
 export default [
 	{
 		path: '/login',
-		component: AuthLayout,
+		component: GeneralLayout,
+		meta: {
+			requiresAuth: false
+		},
 		children: [
 			{
 				path: '',

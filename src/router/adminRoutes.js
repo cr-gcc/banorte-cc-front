@@ -8,7 +8,9 @@ export default [
 		path: '/admin',
 		component: AdminLayout,
 		redirect: '/admin/calendario',
-		meta: { role: 'admin' },
+		meta: {
+			requiresAuth: true
+		},
 		children: [
 			{
 				path: 'calendario',

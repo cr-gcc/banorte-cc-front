@@ -3,10 +3,12 @@ import HomeView from '@/modules/agent/views/HomeView.vue'
 
 export default [
 	{
-		path: '/agent',
+		path: '/agente',
 		component: AgentLayout,
-		redirect: '/agent/home',
-		meta: { role: 'agent' },
+		redirect: '/agente/home',
+		meta: {
+			requiresAuth: true
+		},
 		children: [
 			{
 				path: 'home',
